@@ -1,10 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
-:root {
-  --color-primary: hsl(257, 40%, 49%);
-  --color-secondary: hsl(300, 69%, 71%);
-  --color-text: #fff;
-}
+@use "typography";
+@use "colors";
 
 *,
 *::after,
@@ -20,7 +15,7 @@ html {
 body {
   background-image: url("/images/bg-mobile.svg");
   background-repeat: no-repeat;
-  background-color: var(--color-primary);
+  background-color: colors.$color-primary;
   margin: 0 4rem;
 }
 
@@ -36,23 +31,30 @@ article {
   margin-top: 5.5rem;
 }
 
-h1,
-p {
-  color: var(--color-text);
+%typography-shared_header {
+  opacity: colors.$opacity;
+  color: colors.$color-text;
+  font-family: typography.$font-type_header;
+  font-weight: typography.$font-weight_header;
   text-align: center;
-  opacity: 95%;
 }
 
-p {
-  font-family: "Open Sans", sans-serif;
+%typography-shared_text {
+  opacity: colors.$opacity;
+  color: colors.$color-text;
+  font-family: typography.$font-type_text;
+  font-weight: typography.$font-weight_text;
+  text-align: center;
 }
 
 h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 2.4rem;
-  font-weight: 600;
-  line-height: 3.6rem;
-  margin-bottom: 0;
+  @extend %typography-shared_header;
+  font-size: typography.$font-size-header_mobile;
+  line-height: typography.$line-height-header_mobile;
+}
+
+p {
+  @extend %typography-shared_text;
 }
 
 nav {
@@ -63,41 +65,46 @@ nav {
 }
 
 i {
-  color: var(--color-text);
+  color: colors.$color-text;
   transition: color 0.25s ease-in-out;
 }
 
-nav > a {
-  text-decoration: none;
-  align-items: center;
-  border-radius: 50%;
-  border: 1px solid #ffff;
-  display: inline-flex;
-  height: 28px;
-  justify-content: center;
-  margin-right: 1rem;
-  transition: border-color 0.25s ease-in-out;
-  width: 28px;
+nav {
+  a {
+    text-decoration: none;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #ffff;
+    display: inline-flex;
+    height: 28px;
+    justify-content: center;
+    margin-right: 1rem;
+    transition: border-color 0.25s ease-in-out;
+    width: 28px;
+  }
+
+  a:last-child {
+    margin-right: 0;
+  }
+
+  a:hover {
+    border-color: colors.$color-secondary;
+  }
+
+  a:hover i {
+    color: colors.$color-secondary;
+  }
 }
 
-nav > a:last-child {
-  margin-right: 0;
-}
-
-a:hover {
-  border-color: var(--color-secondary);
-}
-
-a:hover i {
-  color: var(--color-secondary);
-}
-
-footer > p > a {
-  color: var(--color-secondary);
-}
-
-footer > p > a:visited {
-  color: dodgerblue;
+footer {
+  p {
+    a {
+      color: colors.$color-secondary;
+    }
+    a:visited {
+      color: dodgerblue;
+    }
+  }
 }
 
 .fa-facebook-f {
@@ -121,22 +128,20 @@ footer > p > a:visited {
 }
 
 .article-para {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
-  font-weight: 300;
-  line-height: 2.4rem;
   margin-top: 1.5rem;
+  line-height: 2.4rem;
 }
 
 .button_register {
   display: block;
-  background: var(--color-text);
+  background: colors.$color-text;
   border-radius: 20px;
   border: none;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.269022);
-  color: var(--color-primary);
+  color: colors.$color-primary;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  font-family: "Poppins", sans-serif;
+  font-family: typography.$font-type_text;
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.8rem;
@@ -148,9 +153,9 @@ footer > p > a:visited {
 }
 
 .button_register:hover {
-  border-color: var(--color-secondary);
-  background-color: var(--color-secondary);
-  color: var(--color-text);
+  border-color: colors.$color-secondary;
+  background-color: colors.$color-secondary;
+  color: colors.$color-text;
 }
 
 @media screen and (max-width: 320px) {
@@ -213,20 +218,20 @@ footer > p > a:visited {
   }
 
   h1 {
-    font-size: 4rem;
-    line-height: 6rem;
-    margin-top: 0;
+    @extend %typography-shared_header;
+    font-size: typography.$font-size-header_desktop;
+    line-height: typography.$line-height-header_desktop;
   }
 
   nav {
     margin-top: 2.7rem;
     justify-content: flex-end;
-  }
 
-  nav > a {
-    margin-right: 1.6rem;
-    width: 40px;
-    height: 40px;
+    a {
+      margin-right: 1.6rem;
+      width: 40px;
+      height: 40px;
+    }
   }
 
   footer > p {
