@@ -51,9 +51,8 @@ Finally I worked with the layout of the page.
 
 ### What I learned
 
-"It's impossible to allocate width and height to inline elements."
-This what I learned from this challenge.
-I learned it when working on SNS icon links.
+* It's impossible to allocate width and height to inline elements.
+* In <seciton> or <article> tag, you need to put at least one heading element.
 
 ## Author
 
