@@ -14,18 +14,14 @@ body {
   background-image: url("/images/bg-mobile.svg");
   background-repeat: no-repeat;
   background-color: #674baf;
-  margin: 0 4rem;
-}
-
-header {
-  margin-top: 3.82rem;
+  margin: 3.82rem 4rem 0;
 }
 
 main {
   margin-top: 6.7rem;
 }
 
-article {
+section {
   margin-top: 5.5rem;
 }
 
@@ -48,6 +44,7 @@ p {
 h1 {
   font-size: 2.4rem;
   line-height: 3.6rem;
+  margin-top: 5.5rem;
 }
 
 nav {
@@ -172,9 +169,6 @@ footer p a:visited {
     background-image: url("/images/bg-desktop.svg");
     margin: 0 8rem;
     background-size: initial;
-  }
-
-  header {
     margin-top: 6.4rem;
   }
 
@@ -184,12 +178,9 @@ footer p a:visited {
   }
 
   section {
-    margin-left: 6rem;
-  }
-
-  article {
-    margin-top: 3.2rem;
+    margin-top: 0;
     padding-right: 2rem;
+    margin-left: 6rem;
   }
 
   h1,
@@ -200,6 +191,8 @@ p {
   h1 {
     font-size: 4rem;
     line-height: 6rem;
+    margin-top: 3.2rem;
+    margin-bottom: 0;
   }
 
   nav {

@@ -16,20 +16,20 @@ body {
   background-image: url("/images/bg-mobile.svg");
   background-repeat: no-repeat;
   background-color: colors.$color-primary;
-  margin: 0 4rem;
-}
-
-header {
-  margin-top: 3.82rem;
+  margin: 3.82rem 4rem 0;
 }
 
 main {
   margin-top: 6.7rem;
 }
 
-article {
+section {
   margin-top: 5.5rem;
 }
+
+// article {
+//   margin-top: 5.5rem;
+// }
 
 %typography-shared_header {
   opacity: colors.$opacity;
@@ -51,6 +51,7 @@ h1 {
   @extend %typography-shared_header;
   font-size: typography.$font-size-header_mobile;
   line-height: typography.$line-height-header_mobile;
+  margin-top: 5.5rem;
 }
 
 p {
@@ -192,9 +193,6 @@ footer {
     background-image: url("/images/bg-desktop.svg");
     margin: 0 8rem;
     background-size: initial;
-  }
-
-  header {
     margin-top: 6.4rem;
   }
 
@@ -204,13 +202,15 @@ footer {
   }
 
   section {
+    margin-top: 0;
+    padding-right: 2rem;
     margin-left: 6rem;
   }
 
-  article {
-    margin-top: 3.2rem;
-    padding-right: 2rem;
-  }
+  // article {
+  //   margin-top: 2.4rem;
+  //   padding-right: 2rem;
+  // }
 
   h1,
   p {
@@ -221,6 +221,8 @@ footer {
     @extend %typography-shared_header;
     font-size: typography.$font-size-header_desktop;
     line-height: typography.$line-height-header_desktop;
+    margin-top: 3.2rem;
+    margin-bottom: 0;
   }
 
   nav {
